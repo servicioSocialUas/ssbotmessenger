@@ -27,3 +27,8 @@ app.get('/webhook',(req,res)=>{
        res.status(500).send({message:'Ftatal, token incorrecto'});
    }
 });
+
+app.post('/webhook',(req,res)=>{
+    var data = req.body; 
+    console.log(data);
+})
