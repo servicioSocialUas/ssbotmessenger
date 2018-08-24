@@ -1,10 +1,13 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const request = require('request');
+const morgan = require('morgan');
 var app = express();  // arrancamos el servidor
 const config = require('./config');
 
-app.use(bodyParser.json()); //definimos las req y res en json con body parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); //para enterder los datos que envian los clientes en formato json
+app.use(morgan('dev')); //que utilice morgan en su configuracion de desarrollo
 
 app.listen(config.port, ()=>{
     console.log('El servidor se encuentra en http://localhost:3000');
