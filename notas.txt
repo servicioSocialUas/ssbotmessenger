@@ -1,0 +1,3 @@
+webhook
+es una url de terceros que esta a la escucha de nuestros eventos,
+url programada para recivir eventos de terceros
